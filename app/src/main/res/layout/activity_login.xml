@@ -21,4 +21,35 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="298dp" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Email"
+        android:ems="10"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edit_email" />
+
+    <Button
+        android:text="Se connecter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/button"
+        android:layout_below="@+id/edit_mdp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:drawableBottom="@color/colorAccent" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="22dp"
+        android:id="@+id/edit_mdp"
+        android:layout_below="@+id/edit_email"
+        android:layout_alignEnd="@+id/imageView3" />
+
 </RelativeLayout>
