@@ -20,4 +20,7 @@
     <string name="connexion">Connexion</string>
     <string name="inscription">Inscription</string>
     <string name="coin_coiffeuse">Coin coiffeuse</string>
+    <string name="prenom">Prenom</string>
+    <string name="nom">Nom</string>
+    <string name="s_inscrire">S\'inscrire</string>
 </resources>
