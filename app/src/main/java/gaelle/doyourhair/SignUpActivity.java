@@ -1,14 +1,22 @@
 package gaelle.doyourhair;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
 public class SignUpActivity extends AppCompatActivity {
-    //1/ Ecrire la suite des propriétés comme sur MainActivity mais pour SignUpActivity
-    private EditText editNom;
 
-    //2/ Crée une fonction static Launch comme celle sur MainActivity mais pour SignUpActivity
+
+    private EditText nom;
+    private EditText prenom;
+    private EditText email;
+    private EditText mdp;
+
+    public static void launch (Context context){
+        context.startActivity(new Intent(context , SignUpActivity.class));
+    }
 
 
     @Override
@@ -16,6 +24,9 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        //3/ Faire les findViewById correspondant aux propriétés plus haut
+        nom = (EditText) findViewById(R.id.edit_nom);
+        prenom = (EditText) findViewById(R.id.edit_prenom);
+        email = (EditText) findViewById(R.id.edit_email);
+        mdp = (EditText) findViewById(R.id.edit_mdp);
     }
 }

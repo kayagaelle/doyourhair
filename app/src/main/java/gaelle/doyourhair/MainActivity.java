@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Appel la méthode Launch de LoginActivity
+               LoginActivity.launch(view.getContext());
             }
         });
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Appel la méthode Launch de SignUpActivty
+                SignUpActivity.launch(view.getContext());
             }
         });
     }
