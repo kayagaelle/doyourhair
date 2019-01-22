@@ -14,4 +14,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="email">Email</string>
+    <string name="mot_de_passe">mot de passe</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="connexion">Connexion</string>
+    <string name="inscription">Inscription</string>
+    <string name="coin_coiffeuse">Coin coiffeuse</string>
+    <string name="prenom">Prenom</string>
+    <string name="nom">Nom</string>
+    <string name="s_inscrire">S\'inscrire</string>
 </resources>
