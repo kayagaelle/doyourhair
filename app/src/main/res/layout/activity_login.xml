@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="gaelle.doyourhair.LoginActivity"
+    tools:context="gaelle.doyourhair.view.LoginActivity"
     android:background="@color/colorPrimary">
 
     <ImageView
@@ -28,15 +28,18 @@
         android:layout_below="@id/imvLog"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
+        android:textColor="@android:color/white"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress" />
 
-    <Button
+    <android.support.v7.widget.AppCompatButton
         android:text="@string/se_connecter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:textColor="@android:color/white"
         android:id="@+id/btn_connexion"
         android:layout_below="@+id/edit_mdp"
         android:layout_centerHorizontal="true"
@@ -49,6 +52,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/mot_de_passe"
         android:layout_below="@+id/edit_email"
+        android:textColor="@android:color/white"
         android:layout_alignStart="@+id/edit_email"
         android:layout_alignEnd="@+id/edit_email"
         android:layout_marginTop="22dp"

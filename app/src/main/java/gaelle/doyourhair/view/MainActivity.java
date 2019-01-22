@@ -1,4 +1,4 @@
-package gaelle.doyourhair;
+package gaelle.doyourhair.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,11 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import gaelle.doyourhair.R;
+import gaelle.doyourhair.database.DyhDatabase;
+import gaelle.doyourhair.model.User;
+
 public class MainActivity extends AppCompatActivity {
     //propriétés
     private Button btnConnexion;
     private Button btnInscription;
     private Button btnCoinCoiffeuse;
+
+    DatabaseReference reference;
 
 
     // a faire a chaque page
@@ -23,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        reference = FirebaseDatabase.getInstance().getReference("COIFFEUSE");
+
+        User user = new User();
+        user.setNom("Adama");
+
+        reference.child("1").setValue(user);
+
 
         btnConnexion = (Button) findViewById(R.id.btn_connexion);
         btnCoinCoiffeuse = (Button) findViewById(R.id.btn_coin_coiffeuse);

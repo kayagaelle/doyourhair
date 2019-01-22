@@ -1,8 +1,12 @@
-package gaelle.doyourhair;
+package gaelle.doyourhair.view;
 
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import gaelle.doyourhair.R;
+import gaelle.doyourhair.database.DyhDatabase;
+import gaelle.doyourhair.model.User;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -17,5 +21,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         },2000
         );
+
+
     }
 }
