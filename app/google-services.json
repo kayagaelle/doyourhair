@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "145668798541",
-    "firebase_url": "https://doyourhair-9708f.firebaseio.com",
-    "project_id": "doyourhair-9708f",
-    "storage_bucket": "doyourhair-9708f.appspot.com"
+    "project_number": "340327033437",
+    "firebase_url": "https://doyourhair-8d3a5.firebaseio.com",
+    "project_id": "doyourhair-8d3a5",
+    "storage_bucket": "doyourhair-8d3a5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:145668798541:android:de0dd7126b538c12",
+        "mobilesdk_app_id": "1:340327033437:android:de0dd7126b538c12",
         "android_client_info": {
           "package_name": "gaelle.doyourhair"
         }
       },
       "oauth_client": [
         {
-          "client_id": "145668798541-heqskne4uie077ss3r3nhiscbm43fnd8.apps.googleusercontent.com",
+          "client_id": "340327033437-60bad5stf5bj738bn5obrjpmfvf0lt1a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCsqpS57Zcbsn9-W5LxKDxF8ztnQyrgqYg"
+          "current_key": "AIzaSyCXj4Www8BxymvKITh3lnZyHFa30uV3nsc"
         }
       ],
       "services": {
