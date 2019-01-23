@@ -4,20 +4,26 @@ package gaelle.doyourhair.model;
 import java.util.Date;
 
 public class User {
-    private Integer idUser;
+    private String idUser;
     private String mail;
     private String motDePasse;
     private String nom;
     private String prenom;
-    private Date dateNaissance;
     private String photo;
     private String adresse;
     private long latitude;
     private long longitude;
-    private char sexe;
+    private String sexe;
 
     public User() {
         //
+    }
+
+    public User(String idUser, String mail, String nom, String prenom) {
+        this.idUser = idUser;
+        this.mail = mail;
+        this.nom = nom;
+        this.prenom = prenom;
     }
 
     public String getAdresse() {
@@ -44,11 +50,11 @@ public class User {
         this.longitude = longitude;
     }
 
-    public Integer getIdUser() {
+    public String getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(Integer idUser) {
+    public void setIdUser(String idUser) {
         this.idUser = idUser;
     }
 
@@ -84,14 +90,6 @@ public class User {
         this.prenom = prenom;
     }
 
-    public Date getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
     public String getPhoto() {
         return photo;
     }
@@ -100,11 +98,11 @@ public class User {
         this.photo = photo;
     }
 
-    public char getSexe() {
+    public String getSexe() {
         return sexe;
     }
 
-    public void setSexe(char sexe) {
+    public void setSexe(String sexe) {
         this.sexe = sexe;
     }
 }
