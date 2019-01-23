@@ -86,7 +86,7 @@ public class SignUpActivity extends BaseActivity {
         if(TextUtils.isEmpty(name))
             name = usernameFromEmail(user.getEmail());
 
-        writeNewUser(user.getUid(), name, prenom, user.getEmail());
+        writeNewUser(user.getUid(), name, prenom, user.getEmail(), false); //Si création depuis SignUp c'est que pas coiffeuse
 
         HomeActivity.Launch(this);
         finish();

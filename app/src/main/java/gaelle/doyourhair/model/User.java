@@ -14,16 +14,18 @@ public class User {
     private long latitude;
     private long longitude;
     private String sexe;
+    private boolean isCoiffeuse;
 
     public User() {
         //
     }
 
-    public User(String idUser, String mail, String nom, String prenom) {
+    public User(String idUser, String mail, String nom, String prenom, boolean isCoiffeuse) {
         this.idUser = idUser;
         this.mail = mail;
         this.nom = nom;
         this.prenom = prenom;
+        this.isCoiffeuse = isCoiffeuse;
     }
 
     public String getAdresse() {
@@ -104,5 +106,13 @@ public class User {
 
     public void setSexe(String sexe) {
         this.sexe = sexe;
+    }
+
+    public boolean isCoiffeuse() {
+        return isCoiffeuse;
+    }
+
+    public void setCoiffeuse(boolean coiffeuse) {
+        isCoiffeuse = coiffeuse;
     }
 }

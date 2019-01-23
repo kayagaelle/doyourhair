@@ -53,8 +53,8 @@ public class BaseActivity extends AppCompatActivity {
      * @param name
      * @param email
      */
-    protected void writeNewUser(String userId, String name, String prenom, String email) {
-        User user = new User(userId, email, name, prenom);
+    protected void writeNewUser(String userId, String name, String prenom, String email, boolean isCoiffeuse) {
+        User user = new User(userId, email, name, prenom, isCoiffeuse);
 
         database.child("users").child(userId).setValue(user);
     }
