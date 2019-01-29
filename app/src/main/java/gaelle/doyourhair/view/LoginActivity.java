@@ -2,6 +2,7 @@ package gaelle.doyourhair.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +41,9 @@ public class LoginActivity extends BaseActivity {
         editMdp = (EditText) findViewById(R.id.edit_mdp);
         btnConnexion = (Button) findViewById(R.id.btn_connexion);
 
+        Location location = getUserLocation();
+        Toast.makeText(this, location.getLatitude()+" : "+location.getLongitude(), Toast.LENGTH_SHORT).show();
+
         btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +62,7 @@ public class LoginActivity extends BaseActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Log.d(TAG, "Is user creation successful ? "+ task.isSuccessful());
-
+                                hideProgressDialog();
                                 //Si l'inscription est réussi on va ajouter l'utilisateur dans la base
                                 if(task.isSuccessful()){
                                     HomeActivity.Launch(LoginActivity.this);

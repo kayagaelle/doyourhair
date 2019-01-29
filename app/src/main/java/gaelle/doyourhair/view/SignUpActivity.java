@@ -2,6 +2,7 @@ package gaelle.doyourhair.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -83,10 +84,11 @@ public class SignUpActivity extends BaseActivity {
     private void onSignUpSuccess(FirebaseUser user){
         String name = editNom.getText().toString();
         String prenom = editPrenom.getText().toString();
+        Location location = getUserLocation();
         if(TextUtils.isEmpty(name))
             name = usernameFromEmail(user.getEmail());
 
-        writeNewUser(user.getUid(), name, prenom, user.getEmail(), false); //Si création depuis SignUp c'est que pas coiffeuse
+        writeNewUser(user.getUid(), name, prenom, user.getEmail(), false, location.getLatitude(), location.getLongitude()); //Si création depuis SignUp c'est que pas coiffeuse
 
         HomeActivity.Launch(this);
         finish();

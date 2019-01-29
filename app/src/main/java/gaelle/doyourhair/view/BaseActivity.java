@@ -1,9 +1,15 @@
 package gaelle.doyourhair.view;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -16,7 +22,6 @@ public class BaseActivity extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
     protected DatabaseReference database; //objet Firebase pour gérer la base de données
     protected FirebaseAuth firebaseAuth; //Objet Firebase pour gérer les connexion/inscriptions
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,10 +58,53 @@ public class BaseActivity extends AppCompatActivity {
      * @param name
      * @param email
      */
-    protected void writeNewUser(String userId, String name, String prenom, String email, boolean isCoiffeuse) {
-        User user = new User(userId, email, name, prenom, isCoiffeuse);
+    protected void writeNewUser(String userId, String name, String prenom, String email, boolean isCoiffeuse, double latitude, double longitude) {
+        User user = new User(userId, email, name, prenom, isCoiffeuse, latitude, longitude);
 
         database.child("users").child(userId).setValue(user);
     }
+
+
+    /**
+     * Recupère la localisation de l'utilisateur depuis le réseau et non depuis le GPS
+     */
+    protected Location getUserLocation(){
+        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        Location location = null;
+        boolean networkEnable = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        if(networkEnable){
+            try {
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+                location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            }catch (SecurityException e){}
+        }
+
+        return location;
+    }
+
+    LocationListener locationListener =new LocationListener() {
+        @Override
+        public void onLocationChanged(android.location.Location location) {
+            double latitude=location.getLatitude();
+            double longitude=location.getLongitude();
+            Log.d("LocationListener", "New Latitude: "+latitude + "New Longitude: "+longitude);
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    };
 
 }
